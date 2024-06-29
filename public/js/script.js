@@ -23,7 +23,7 @@
   /* ============================================================ */
   /* MOBILE MENU START
     /* ============================================================ */
-  function mobile_menu(selector, actionSelector) {
+  /* function mobile_menu(selector, actionSelector) {
     var mobile_menu = $(selector);
     mobile_menu.on("click", function () {
       $(selector).toggleClass("is-menu-open");
@@ -52,7 +52,7 @@
   mobile_menu(
     ".menu_toggle, .close-menu ",
     ".mobile-menu, .minfo__app, .menu-overlay"
-  );
+  ); */
   /* Mobile menu End */
 
   /* ============================================================ */

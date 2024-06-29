@@ -106,6 +106,11 @@ export class AppComponent implements AfterViewInit {
         this.setLightTheme();
       }
     }
+
+    this.mobile_menu(
+      '.menu_toggle, .close-menu ',
+      '.mobile-menu, .minfo__app, .menu-overlay'
+    );
   }
 
   onThemeSwitcherItemClick(e: Event) {
@@ -128,5 +133,21 @@ export class AppComponent implements AfterViewInit {
     localStorage['theme'] = 'light';
     $('#dark_theme').removeClass('active');
     $('#light_theme').addClass('active');
+  }
+
+  mobile_menu(selector: string, actionSelector: string) {
+    var mobile_menu = $(selector);
+    mobile_menu.on('click', function () {
+      $(selector).toggleClass('is-menu-open');
+    });
+
+    var hamburgerbtn = $(selector);
+    hamburgerbtn.on('click', function () {
+      $(actionSelector).toggleClass('is-menu-open');
+    });
+    $('.mobile-menu .main-menu a, .menu-overlay').on('click', function (e) {
+      $(actionSelector).removeClass('is-menu-open');
+      $(selector).removeClass('is-menu-open');
+    });
   }
 }
