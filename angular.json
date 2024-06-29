@@ -16,9 +16,7 @@
             "outputPath": "dist/minfo",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -27,9 +25,22 @@
               }
             ],
             "styles": [
+              "public/css/fontAwesome5Pro.css",
+              "public/css/cdheadline.css",
+              "./node_modules/swiper/swiper-bundle.min.css",
+              "public/css/style.min.css",
+              "src/tailwind.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "public/js/jquery-3.6.0.min.js",
+              "public/js/tw-elements.umd.min.js",
+              "public/js/cd-headline.js",
+              "public/js/jquery.counterup.min.js",
+              "public/js/scrollIt.min.js",
+              "public/js/circle-progress.min.js",
+              "public/js/script.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -73,10 +84,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
@@ -84,9 +92,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }
