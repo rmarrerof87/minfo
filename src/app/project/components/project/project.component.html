@@ -2,6 +2,7 @@
   class="minfo__contentBox relative mx-auto max-w-container xl:max-2xl:max-w-65rem"
 >
   <!-- Project Details Section Start -->
+  @if (project(); as project) {
   <div
     class="py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto"
   >
@@ -18,15 +19,15 @@
       <h2
         class="text-2xl font-semibold leading-normal text-black dark:text-white mt-7 lg:mt-10 article-title lg:text-3xl lg:leading-normal"
       >
-        Three wine glasses filled with candies
+        {{ project.title }}
       </h2>
       <div
         class="mb-4 overflow-hidden mt-7 xl:my-8 thumb rounded-xl xl:rounded-2xl"
       >
         <img
-          src="img/portfolio/portfolio-img1-xl.png"
+          [src]="project.imageUrls['large']"
           class="w-full"
-          alt="Project Thumbnail Image"
+          [alt]="project.title"
         />
       </div>
       <div
@@ -34,15 +35,21 @@
       >
         <div>
           <h6 class="text-black dark:text-white">CLIENT</h6>
-          <p class="text-regular">Envato Theme</p>
+          <p class="text-regular">{{ project.client }}</p>
         </div>
         <div>
           <h6 class="text-black dark:text-white">SERVICES:</h6>
-          <p class="text-regular">Tips & Tricks, Design</p>
+          <p class="text-regular">
+            @for (item of project.services; track $index) {
+            <span>{{ item }} </span>
+            @if (!$last) {
+            <span>, </span>
+            } }
+          </p>
         </div>
         <div>
           <h6 class="text-black dark:text-white">DURATION</h6>
-          <p class="text-regular">108 hrs</p>
+          <p class="text-regular">{{ project.duration }}</p>
         </div>
       </div>
 
@@ -53,12 +60,7 @@
           Project Description
         </h3>
         <p class="text-regular !leading-[2]">
-          Patent authorities globally are grappling with the challenge of
-          redefining their approach to handling inventions generated not by
-          human ingenuity but by AI. It has sparked considerable debate within
-          the intellectual property community. This analysis initiates a
-          three-part series that delves into the influence of AI on intellectual
-          property rights.
+          {{ project.description }}
         </p>
         <ul class="text-regular !leading-[2] list-disc ml-6 my-4">
           <li>
@@ -73,14 +75,14 @@
         <div class="grid gap-5 my-8 sm:grid-cols-2 md:gap-8">
           <div class="overflow-hidden rounded-xl xl:rounded-2xl">
             <img
-              src="img/portfolio/portfolio-img1-2.png"
+              [src]="project.imageUrls['intern-1']"
               class="w-full"
               alt="Project Inner Colum Image"
             />
           </div>
           <div class="overflow-hidden rounded-xl xl:rounded-2xl">
             <img
-              src="img/portfolio/portfolio-img1-1.png"
+              [src]="project.imageUrls['intern-2']"
               class="w-full"
               alt="Project Inner Colum Image"
             />
@@ -90,16 +92,20 @@
         <h3 class="mt-12 mb-10 text-2xl font-medium text-black dark:text-white">
           Technologies
         </h3>
-        <div class="progressbar-wrap space-y-7">
+        <div #tech class="progressbar-wrap space-y-7">
+          @for (item of project.tecnologies; track $index) {
           <div class="flex flex-wrap items-center gap-5 progressbar">
             <div class="w-8 icon">
-              <img src="img/skill/html.svg" alt="HTML5" />
+              <img [src]="item.logo" [alt]="item.name" />
             </div>
-            <div class="flex-1 bar" data-percentage="90%">
+            <div
+              class="flex-1 bar"
+              [attr.data-percentage]="item.progress + '%'"
+            >
               <h5
                 class="mb-2 text-black dark:text-white progress-title-holder text-regular"
               >
-                <span class="progress-title">HTML5</span>
+                <span class="progress-title">{{ item.name }}</span>
               </h5>
               <div
                 class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl"
@@ -110,85 +116,12 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap items-center gap-5 progressbar">
-            <div class="w-8 icon">
-              <img src="img/skill/css.svg" alt="CSS3" />
-            </div>
-            <div class="flex-1 bar" data-percentage="80%">
-              <h5
-                class="mb-2 text-black dark:text-white progress-title-holder text-regular"
-              >
-                <span class="progress-title">CSS3</span>
-              </h5>
-              <div
-                class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl"
-              >
-                <div
-                  class="progress-content bg-theme h-1.5 w-0 rounded-2xl"
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-5 progressbar">
-            <div class="w-8 icon">
-              <img src="img/skill/js.svg" alt="javascript" />
-            </div>
-            <div class="flex-1 bar" data-percentage="60%">
-              <h5
-                class="mb-2 text-black dark:text-white progress-title-holder text-regular"
-              >
-                <span class="progress-title">javascript</span>
-              </h5>
-              <div
-                class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl"
-              >
-                <div
-                  class="progress-content bg-theme h-1.5 w-0 rounded-2xl"
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-5 progressbar">
-            <div class="w-8 icon">
-              <img src="img/skill/tailwind.svg" alt="TailwindCSS" />
-            </div>
-            <div class="flex-1 bar" data-percentage="90%">
-              <h5
-                class="mb-2 text-black dark:text-white progress-title-holder text-regular"
-              >
-                <span class="progress-title">TailwindCSS</span>
-              </h5>
-              <div
-                class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl"
-              >
-                <div
-                  class="progress-content bg-theme h-1.5 w-0 rounded-2xl"
-                ></div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-5 progressbar">
-            <div class="w-8 icon">
-              <img src="img/skill/figma.svg" alt="TailwindCSS" />
-            </div>
-            <div class="flex-1 bar" data-percentage="80%">
-              <h5
-                class="mb-2 text-black dark:text-white progress-title-holder text-regular"
-              >
-                <span class="progress-title">Figma</span>
-              </h5>
-              <div
-                class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl"
-              >
-                <div
-                  class="progress-content bg-theme h-1.5 w-0 rounded-2xl"
-                ></div>
-              </div>
-            </div>
-          </div>
+          }
         </div>
       </div>
     </div>
   </div>
+
+  }
   <!-- Project Details Section End -->
 </div>
