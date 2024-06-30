@@ -6,6 +6,7 @@ import {
   signal,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { DataService } from './shared/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DataService],
 })
 export class AppComponent implements AfterViewInit {
   title = 'minfo';
