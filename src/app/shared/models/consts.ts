@@ -319,12 +319,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img1.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img1.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -335,12 +335,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img2.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img2.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -351,12 +351,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img3.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img3.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -367,12 +367,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img4.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img4.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -383,12 +383,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img5.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img5.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -399,12 +399,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img6.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img6.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -415,12 +415,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img7.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img7.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -431,12 +431,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img8.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img8.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -447,12 +447,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img9.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img9.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',
@@ -463,12 +463,12 @@ export const PROJECTS: Project[] = [
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community. This analysis initiates a three-part series that delves into the influence of AI on intellectual property rights.',
     duration: '108 hrs',
-    imageUrls: [
-      'img/portfolio/portfolio-img10.png',
-      'img/portfolio/portfolio-img1-xl.png',
-      'img/portfolio/portfolio-img1-2.png',
-      'img/portfolio/portfolio-img1-1.png',
-    ],
+    imageUrls: {
+      default: 'img/portfolio/portfolio-img10.png',
+      large: 'img/portfolio/portfolio-img1-xl.png',
+      'intern-1': 'img/portfolio/portfolio-img1-2.png',
+      'intern-2': 'img/portfolio/portfolio-img1-1.png',
+    },
     services: ['Tips & Tricks', 'Design'],
     tecnologies: [...SKILLS],
     title: 'Three wine glasses filled with candies',

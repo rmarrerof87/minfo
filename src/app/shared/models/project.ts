@@ -1,7 +1,7 @@
 export interface Project {
   id: number;
   title: string;
-  imageUrls: string[];
+  imageUrls: { [key: string]: string };
   client: string;
   services: string[];
   duration: string;
