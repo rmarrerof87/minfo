@@ -29,7 +29,6 @@
               "public/css/cdheadline.css",
               "./node_modules/swiper/swiper-bundle.min.css",
               "public/css/style.min.css",
-              "src/tailwind.css",
               "src/styles.css"
             ],
             "scripts": [
