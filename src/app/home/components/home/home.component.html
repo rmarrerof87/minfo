@@ -15,7 +15,7 @@
 
   <!-- My Services Section Start -->
   <div data-scroll-index="2" id="service" #service>
-    @defer (on viewport(about)) {
+    @defer (on viewport(about); on timer(5s)) {
     <app-home-services />
     }
   </div>
@@ -23,7 +23,7 @@
 
   <!-- Skills Section Start -->
   <div data-scroll-index="3" id="skill" #skill>
-    @defer (on viewport(service)) {
+    @defer (on viewport(service); on timer(5s)) {
     <app-home-skills />
     }
   </div>
@@ -31,7 +31,7 @@
 
   <!-- My Resume Section Start -->
   <div data-scroll-index="4" id="resume" #resume>
-    @defer (on viewport(skill)) {
+    @defer (on viewport(skill); on timer(5s)) {
     <app-home-resume />
     }
   </div>
@@ -39,7 +39,7 @@
 
   <!-- Portfolio Section Start -->
   <div data-scroll-index="5" id="portfolio" #portfolio>
-    @defer (on viewport(resume)) {
+    @defer (on viewport(resume); on timer(5s)) {
     <app-home-portfolio />
     }
   </div>
@@ -47,7 +47,7 @@
 
   <!-- Blog Section Start -->
   <div data-scroll-index="6" id="blog" #blog>
-    @defer (on viewport(portfolio)) {
+    @defer (on viewport(portfolio); on timer(5s)) {
     <app-home-blogs />
     }
   </div>
@@ -55,7 +55,7 @@
 
   <!-- Testimonial Section Start -->
   <div data-scroll-index="7" id="testimonial" #testimonial>
-    @defer (on viewport(blog)) {
+    @defer (on viewport(blog); on timer(5s)) {
     <app-home-testimonials />
     }
   </div>
@@ -63,7 +63,7 @@
 
   <!-- Contact Section Start -->
   <div data-scroll-index="8" id="contact">
-    @defer (on viewport(testimonial)) {
+    @defer (on viewport(testimonial); on timer(5s)) {
     <app-home-contact />
     }
   </div>
