@@ -2,6 +2,7 @@
   class="minfo__contentBox relative mx-auto max-w-container xl:max-2xl:max-w-65rem"
 >
   <!-- Blog Details Section Start -->
+  @if (post(); as post) {
   <div
     class="py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto"
   >
@@ -18,15 +19,15 @@
       <h2
         class="text-2xl font-semibold leading-normal text-black dark:text-white mt-7 lg:mt-10 article-title lg:text-3xl lg:leading-normal"
       >
-        Elevate your mornings with perfectly brewed coffee
+        {{ post.title }}
       </h2>
       <div
         class="mb-4 overflow-hidden mt-7 xl:my-8 thumb rounded-xl xl:rounded-2xl"
       >
         <img
-          src="assets/img/blog/article1-xl.png"
+          [src]="post.imageUrls['large']"
           class="w-full"
-          alt="Blog Thumbnail Image"
+          [alt]="post.title"
         />
       </div>
       <div
@@ -34,15 +35,23 @@
       >
         <div>
           <h6 class="text-black dark:text-white">POSTED BY</h6>
-          <p class="text-regular">Adrinao Smith</p>
+          <p class="text-regular">{{ post.writenBy }}</p>
         </div>
         <div>
           <h6 class="text-black dark:text-white">CATEGORY:</h6>
-          <p class="text-regular">Tips & Tricks, Design</p>
+          <p class="text-regular">
+            @for (item of post.category; track $index) {
+            <span>{{ item }} </span>
+            @if (!$last) {
+            <span>, </span>
+            }}
+          </p>
         </div>
         <div>
           <h6 class="text-black dark:text-white">POSTED ON:</h6>
-          <p class="text-regular">Noveber 01, 2023</p>
+          <p class="text-regular">
+            {{ post.publicated | date : "MMMM dd, yyyy" }}
+          </p>
         </div>
       </div>
 
@@ -53,10 +62,7 @@
           Cappuccino Bliss
         </h3>
         <p class="text-regular leading-[2]">
-          Patent authorities globally are grappling with the challenge of
-          redefining their approach to handling inventions generated not by
-          human ingenuity but by AI. It has sparked considerable debate within
-          the intellectual property community.
+          {{ post.description }}
         </p>
         <br />
         <h3
@@ -78,14 +84,14 @@
         >
           <div>
             <img
-              src="assets/img/blog/article-inner2.png"
+              [src]="post.imageUrls['intern-1']"
               class="w-full"
               alt="Blog Inner Colum Image"
             />
           </div>
           <div>
             <img
-              src="assets/img/blog/article-inner1.png"
+              [src]="post.imageUrls['intern-2']"
               class="w-full"
               alt="Blog Inner Colum Image"
             />
@@ -170,264 +176,54 @@
           <div
             class="flex flex-wrap items-center gap-2.5 *:inline-block *:border *:border-dashed *:border-greyBlack *:rounded-md *:text-sm *:py-1.5 *:px-2 *:transition-all"
           >
+            @for (item of post.tags; track $index) {
             <a href="#" class="hover:text-theme dark:hover:text-white">
-              HTML5
+              {{ item }}
             </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white">
-              CSS3
-            </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white">
-              WordPress
-            </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white">
-              UI Design
-            </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white"> AI </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white">
-              Discussion
-            </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white">
-              Tailwind
-            </a>
-            <a href="#" class="hover:text-theme dark:hover:text-white">
-              Webflow
-            </a>
+            }
           </div>
         </div>
       </div>
 
       <div class="comments">
         <h3 class="mb-5 text-2xl font-medium text-black dark:text-white">
-          Comments (3)
+          Comments ({{ post.comments.length }})
         </h3>
 
         <ul class="comment-list *:Py-4">
+          @for (item of post.comments; track $index) {
           <li class="comment">
             <div class="flex gap-4 author">
               <div class="thumb">
                 <img
-                  src="assets/img/blog/comment-author.png"
+                  [src]="item.useravatar"
                   class="rounded-full w-14 h-14"
-                  alt="Mily Martin"
+                  [alt]="item.username"
                 />
               </div>
               <div class="flex-1">
                 <h4 class="mb-1 text-lg font-medium text-black dark:text-white">
-                  Mily Martin
+                  {{ item.username }}
                 </h4>
-                <p class="text-sm leading-1.875">November 02, 2023</p>
+                <p class="text-sm leading-1.875">
+                  {{ item.created | date : "MMMM dd, yyyy" }}
+                </p>
               </div>
             </div>
             <div class="description md:ml-16 md:pl-2">
               <p class="my-4 text-sm md:text-regular leading-1.875">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation.
+                {{ item.text }}
               </p>
-              <p>
-                <button
-                  class="text-sm font-medium dark:font-light text-black dark:text-white"
-                  data-twe-collapse-init
-                  data-twe-target="#reply_form1"
-                  aria-label="Reply Comment"
-                >
-                  Reply
-                </button>
-              </p>
-              <form
-                action="#"
-                method="post"
-                id="reply_form1"
-                class="mt-2 !visible hidden"
-                data-twe-collapse-item
-              >
-                <textarea
-                  name="replyComment"
-                  rows="5"
-                  class="w-full h-24 p-4 text-sm bg-transparent border border-platinum dark:border-greyBlack focus:border-theme dark:focus:border-theme rounded-lg outline-none resize-none"
-                ></textarea>
-                <div class="space-x-3 button-group text-end">
-                  <button
-                    type="reset"
-                    class="px-4 py-2 text-sm font-light text-black dark:text-white border rounded-md border-platinum dark:border-greyBlack dark:hover:bg-greyBlack"
-                    aria-label="Cancel"
-                    data-twe-collapse-init
-                    data-twe-target="#reply_form1"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    class="px-4 py-2 text-sm font-light text-white border rounded-md border-theme bg-theme"
-                    aria-label="Reply Comment"
-                  >
-                    Reply
-                  </button>
-                </div>
-              </form>
+              <app-reply-comment-form [commnentId]="item.id" />
             </div>
           </li>
-          <li class="comment">
-            <div class="flex gap-4 author">
-              <div class="thumb">
-                <img
-                  src="assets/img/blog/comment-author2.png"
-                  class="rounded-full w-14 h-14"
-                  alt="Mily Martin"
-                />
-              </div>
-              <div class="flex-1">
-                <h4 class="mb-1 text-lg font-medium text-black dark:text-white">
-                  Mily Martin
-                </h4>
-                <p class="text-sm leading-1.875">November 02, 2023</p>
-              </div>
-            </div>
-            <div class="description md:ml-16 md:pl-2">
-              <p class="my-4 text-sm md:text-regular leading-1.875">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation.
-              </p>
-              <p>
-                <button
-                  class="text-sm font-medium dark:font-light text-black dark:text-white"
-                  data-twe-collapse-init
-                  data-twe-target="#reply_form2"
-                  aria-label="Reply Comment"
-                >
-                  Reply
-                </button>
-              </p>
-              <form
-                action="#"
-                method="post"
-                id="reply_form2"
-                class="mt-2 !visible hidden"
-                data-twe-collapse-item
-              >
-                <textarea
-                  name="replyComment"
-                  rows="5"
-                  class="w-full h-24 p-4 text-sm bg-transparent border border-platinum dark:border-greyBlack focus:border-theme dark:focus:border-theme rounded-lg outline-none resize-none"
-                ></textarea>
-                <div class="space-x-3 button-group text-end">
-                  <button
-                    type="reset"
-                    class="px-4 py-2 text-sm font-light text-black dark:text-white border rounded-md border-platinum dark:border-greyBlack dark:hover:bg-greyBlack"
-                    data-twe-collapse-init
-                    data-twe-target="#reply_form2"
-                    aria-label="Cancel"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    class="px-4 py-2 text-sm font-light text-white border rounded-md border-theme bg-theme"
-                    aria-label="Reply Comment"
-                  >
-                    Reply
-                  </button>
-                </div>
-              </form>
-            </div>
-          </li>
-          <li class="comment">
-            <div class="flex gap-4 author">
-              <div class="thumb">
-                <img
-                  src="assets/img/blog/comment-author.png"
-                  class="rounded-full w-14 h-14"
-                  alt="Mily Martin"
-                />
-              </div>
-              <div class="flex-1">
-                <h4 class="mb-1 text-lg font-medium text-black dark:text-white">
-                  Mily Martin
-                </h4>
-                <p class="text-sm leading-1.875">November 02, 2023</p>
-              </div>
-            </div>
-            <div class="description md:ml-16 md:pl-2">
-              <p class="my-4 text-sm md:text-regular leading-1.875">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation.
-              </p>
-              <p>
-                <button
-                  class="text-sm font-medium dark:font-light text-black dark:text-white"
-                  data-twe-collapse-init
-                  data-twe-target="#reply_form3"
-                  aria-label="Reply Comment"
-                >
-                  Reply
-                </button>
-              </p>
-              <form
-                action="#"
-                method="post"
-                id="reply_form3"
-                class="mt-2 !visible hidden"
-                data-te-collapse-item
-              >
-                <textarea
-                  name="replyComment"
-                  rows="5"
-                  class="w-full h-24 p-4 text-sm bg-transparent border border-platinum dark:border-greyBlack focus:border-theme dark:focus:border-theme rounded-lg outline-none resize-none"
-                ></textarea>
-                <div class="space-x-3 button-group text-end">
-                  <button
-                    type="reset"
-                    class="px-4 py-2 text-sm font-light text-black dark:text-white border rounded-md border-platinum dark:border-greyBlack dark:hover:bg-greyBlack"
-                    data-twe-collapse-init
-                    data-twe-target="#reply_form3"
-                    aria-label="Cancel"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    class="px-4 py-2 text-sm font-light text-white border rounded-md border-theme bg-theme"
-                    aria-label="Reply Comment"
-                  >
-                    Reply
-                  </button>
-                </div>
-              </form>
-            </div>
-          </li>
+          }
         </ul>
 
-        <form action="#" method="post" class="mt-6 comment-form xl:mt-12">
-          <h5 class="mb-5 text-black dark:text-white font-regular">
-            Leave a Comment
-          </h5>
-          <div class="space-y-5 form-group">
-            <input
-              type="text"
-              name="name"
-              class="w-full border rounded-md border-dashed border-platinum dark:border-greyBlack outline-none py-3.5 px-4 text-white text-regular focus:border-theme dark:focus:border-theme dark:placeholder:text-white/40"
-              placeholder="Full Name"
-              required
-            />
-            <textarea
-              name="message"
-              rows="5"
-              class="w-full border rounded-md border-dashed border-platinum dark:border-greyBlack outline-none py-3.5 px-4 text-white text-regular focus:border-theme dark:focus:border-theme dark:placeholder:text-white/40 resize-none"
-              placeholder="Your Message"
-            ></textarea>
-            <button
-              type="submit"
-              class="inline-flex items-center gap-2 text-[15px] font-medium border border-theme bg-theme text-white py-4.5 px-9 rounded-4xl leading-none transition-all duration-300 hover:bg-themeHover hover:border-themeHover"
-              aria-label="Add Comment"
-            >
-              Add Comment
-            </button>
-          </div>
-        </form>
+        <app-comment-form />
       </div>
     </div>
   </div>
+  }
   <!-- Blog Details Section End -->
 </div>

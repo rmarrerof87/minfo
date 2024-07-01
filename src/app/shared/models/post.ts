@@ -5,7 +5,7 @@ export interface Post {
   category: string[];
   publicated: Date;
   description: string;
-  imagesUrls: string[];
+  imageUrls: { [key: string]: string };
   tags: string[];
   comments: Comment[];
 }

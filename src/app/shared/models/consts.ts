@@ -106,12 +106,12 @@ export const POSTS: Post[] = [
     comments: [...COMMENTS],
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community.',
-    imagesUrls: [
-      'img/blog/article1.png',
-      'img/blog/article1-xl.png',
-      'img/blog/article-inner2.png',
-      'img/blog/article-inner1.png',
-    ],
+    imageUrls: {
+      default: 'img/blog/article1.png',
+      large: 'img/blog/article1-xl.png',
+      'intern-1': 'img/blog/article-inner2.png',
+      'intern-2': 'img/blog/article-inner1.png',
+    },
     publicated: new Date(),
     tags: [
       'HTML5',
@@ -132,12 +132,12 @@ export const POSTS: Post[] = [
     comments: [...COMMENTS],
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community.',
-    imagesUrls: [
-      'img/blog/article2.png',
-      'img/blog/article1-xl.png',
-      'img/blog/article-inner2.png',
-      'img/blog/article-inner1.png',
-    ],
+    imageUrls: {
+      default: 'img/blog/article2.png',
+      large: 'img/blog/article1-xl.png',
+      'intern-1': 'img/blog/article-inner2.png',
+      'intern-2': 'img/blog/article-inner1.png',
+    },
     publicated: new Date(),
     tags: [
       'HTML5',
@@ -158,12 +158,12 @@ export const POSTS: Post[] = [
     comments: [...COMMENTS],
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community.',
-    imagesUrls: [
-      'img/blog/article3.png',
-      'img/blog/article1-xl.png',
-      'img/blog/article-inner2.png',
-      'img/blog/article-inner1.png',
-    ],
+    imageUrls: {
+      default: 'img/blog/article3.png',
+      large: 'img/blog/article1-xl.png',
+      'intern-1': 'img/blog/article-inner2.png',
+      'intern-2': 'img/blog/article-inner1.png',
+    },
     publicated: new Date(),
     tags: [
       'HTML5',
@@ -184,12 +184,12 @@ export const POSTS: Post[] = [
     comments: [...COMMENTS],
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community.',
-    imagesUrls: [
-      'img/blog/article4.png',
-      'img/blog/article1-xl.png',
-      'img/blog/article-inner2.png',
-      'img/blog/article-inner1.png',
-    ],
+    imageUrls: {
+      default: 'img/blog/article4.png',
+      large: 'img/blog/article1-xl.png',
+      'intern-1': 'img/blog/article-inner2.png',
+      'intern-2': 'img/blog/article-inner1.png',
+    },
     publicated: new Date(),
     tags: [
       'HTML5',
@@ -210,12 +210,12 @@ export const POSTS: Post[] = [
     comments: [...COMMENTS],
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community.',
-    imagesUrls: [
-      'img/blog/article5.png',
-      'img/blog/article1-xl.png',
-      'img/blog/article-inner2.png',
-      'img/blog/article-inner1.png',
-    ],
+    imageUrls: {
+      default: 'img/blog/article5.png',
+      large: 'img/blog/article1-xl.png',
+      'intern-1': 'img/blog/article-inner2.png',
+      'intern-2': 'img/blog/article-inner1.png',
+    },
     publicated: new Date(),
     tags: [
       'HTML5',
@@ -236,12 +236,12 @@ export const POSTS: Post[] = [
     comments: [...COMMENTS],
     description:
       'Patent authorities globally are grappling with the challenge of redefining their approach to handling inventions generated not by human ingenuity but by AI. It has sparked considerable debate within the intellectual property community.',
-    imagesUrls: [
-      'img/blog/article6.png',
-      'img/blog/article1-xl.png',
-      'img/blog/article-inner2.png',
-      'img/blog/article-inner1.png',
-    ],
+    imageUrls: {
+      default: 'img/blog/article6.png',
+      large: 'img/blog/article1-xl.png',
+      'intern-1': 'img/blog/article-inner2.png',
+      'intern-2': 'img/blog/article-inner1.png',
+    },
     publicated: new Date(),
     tags: [
       'HTML5',

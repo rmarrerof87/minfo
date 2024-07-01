@@ -47,25 +47,4 @@ export class ProjectComponent implements OnDestroy {
     this.dataSrv.clearSelectedProject();
     sessionStorage.removeItem('activeProject');
   }
-
-  keepTrack(section: string) {
-    console.log('as');
-    const viewHeight = window.innerHeight;
-    const element = document.getElementById(section);
-    if (element !== null) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top >= 0 && rect.top < viewHeight / 2) {
-        $('.bar').each(function () {
-          $(this)
-            .find('.progress-content')
-            .animate(
-              {
-                width: $(this).attr('data-percentage'),
-              },
-              2000
-            );
-        });
-      }
-    }
-  }
 }

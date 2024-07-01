@@ -33,7 +33,6 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "public/js/tw-elements.umd.min.js",
               "public/js/cd-headline.js",
               "public/js/jquery.counterup.min.js",
               "public/js/scrollIt.min.js",

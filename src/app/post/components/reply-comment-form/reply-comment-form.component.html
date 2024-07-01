@@ -1,0 +1,41 @@
+<p>
+  <button
+    class="text-sm font-medium dark:font-light text-black dark:text-white"
+    data-twe-collapse-init
+    [attr.data-twe-target]="'#reply_form' + commnentId()"
+    aria-label="Reply Comment"
+  >
+    Reply
+  </button>
+</p>
+<form
+  action="#"
+  method="post"
+  [id]="'reply_form' + commnentId()"
+  class="mt-2 !visible hidden"
+  data-twe-collapse-item
+>
+  <textarea
+    name="replyComment"
+    rows="5"
+    class="w-full h-24 p-4 text-sm bg-transparent border border-platinum dark:border-greyBlack focus:border-theme dark:focus:border-theme rounded-lg outline-none resize-none"
+  ></textarea>
+  <div class="space-x-3 button-group text-end">
+    <button
+      type="reset"
+      class="px-4 py-2 text-sm font-light text-black dark:text-white border rounded-md border-platinum dark:border-greyBlack dark:hover:bg-greyBlack"
+      aria-label="Cancel"
+      data-twe-collapse-init
+      [attr.data-twe-target]="'#reply_form' + commnentId()"
+    >
+      Cancel
+    </button>
+    <button
+      type="submit"
+      class="px-4 py-2 text-sm font-light text-white border rounded-md border-theme bg-theme"
+      aria-label="Reply Comment"
+    >
+      Reply
+    </button>
+  </div>
+</form>

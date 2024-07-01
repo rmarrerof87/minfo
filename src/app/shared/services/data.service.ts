@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Post } from '../models/post';
+import { Comment, Post } from '../models/post';
 import { Project, Tecnology } from '../models/project';
 import { Testimonial } from '../models/testimonial';
 import {
@@ -46,5 +46,22 @@ export class DataService {
   }
   clearSelectedPost(): void {
     this.activePost.set(null);
+  }
+  addComment(data: Comment): Comment {
+    const tmpPost = this.activePost();
+    if (tmpPost) {
+      const newComment = { ...data, id: tmpPost.comments.length + 1 };
+      tmpPost.comments.push(newComment);
+      this.posts.update((val) => {
+        const tmpList = [...val];
+        const index = val.findIndex((e) => e.id === tmpPost.id);
+        if (index !== -1) {
+          tmpList[index] = { ...tmpPost };
+        }
+        return tmpList;
+      });
+      return newComment;
+    }
+    return data;
   }
 }
