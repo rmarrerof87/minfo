@@ -1,1 +1,21 @@
-<p>testimonial-card works!</p>
+<div class="text-center slider-inner md:px-5">
+  <div class="image flex-center">
+    <img [src]="data().imageUrl" alt="" />
+  </div>
+  <div class="mt-6 mb-3 text-center rating text-lightOrange text-sm">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="text-sm md:text-[15px] leading-loose content">
+    {{ data().text }}
+  </div>
+  <div class="mt-5 text-center author">
+    <h6 class="text-lg font-medium text-black dark:text-white">
+      {{ data().userName }}
+    </h6>
+    <p class="text-sm">{{ data().userJob }}</p>
+  </div>
+</div>

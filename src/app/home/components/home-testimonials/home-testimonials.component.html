@@ -23,87 +23,12 @@
   <div class="mt-12 testimonial-slider">
     <div class="swiper">
       <div class="swiper-wrapper">
+        @for (item of testimonials(); track $index) {
         <div class="swiper-slide">
-          <div class="text-center slider-inner md:px-5">
-            <div class="image flex-center">
-              <img src="img/testimonial/author1.png" alt="" />
-            </div>
-            <div class="mt-6 mb-3 text-center rating text-lightOrange text-sm">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="text-sm md:text-[15px] leading-loose content">
-              Working with
-              <span class="font-semibold text-theme">Reddick</span>
-              is a game-changer. Their coding expertise and commitment to
-              quality make every project a success.
-            </div>
-            <div class="mt-5 text-center author">
-              <h6 class="text-lg font-medium text-black dark:text-white">
-                Alex Johnson
-              </h6>
-              <p class="text-sm">Developer</p>
-            </div>
-          </div>
+          <app-testimonial-card [data]="item" />
         </div>
         <!--./testimonial-card-->
-
-        <div class="swiper-slide">
-          <div class="text-center slider-inner md:px-5">
-            <div class="image flex-center">
-              <img src="img/testimonial/author2.png" alt="" />
-            </div>
-            <div class="mt-6 mb-3 text-center rating text-lightOrange text-sm">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="text-sm md:text-[15px] leading-loose content">
-              <span class="font-semibold text-theme">Reddick</span>
-              exceeds expectations with top-tier coding skills. Reliable,
-              collaborative, and a true asset to any project. Highly recommended
-            </div>
-            <div class="mt-5 text-center author">
-              <h6 class="text-lg font-medium text-black dark:text-white">
-                Mily Martin
-              </h6>
-              <p class="text-sm">CEO-itTheme</p>
-            </div>
-          </div>
-        </div>
-        <!--./testimonial-card-->
-
-        <div class="swiper-slide">
-          <div class="text-center slider-inner md:px-5">
-            <div class="image flex-center">
-              <img src="img/testimonial/author2.png" alt="" />
-            </div>
-            <div class="mt-6 mb-3 text-center rating text-lightOrange text-sm">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="text-sm md:text-[15px] leading-loose content">
-              <span class="font-semibold text-theme">Reddick</span>
-              delivers excellence in every line of code. Dependable, innovative,
-              and a key player in project success. Outstanding performance.
-            </div>
-            <div class="mt-5 text-center author">
-              <h6 class="text-lg font-medium text-black dark:text-white">
-                Alex Johnson
-              </h6>
-              <p class="text-sm">Developer</p>
-            </div>
-          </div>
-        </div>
-        <!--./testimonial-card-->
+        }
       </div>
 
       <!-- Slider Controls Start -->

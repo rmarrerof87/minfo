@@ -1,16 +1,21 @@
-import { AfterViewInit, Component, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, signal } from '@angular/core';
 import Swiper from 'swiper';
+import { DataService } from '../../../shared/services/data.service';
+import { TestimonialCardComponent } from '../../../shared/components/testimonial-card/testimonial-card.component';
 
 @Component({
   selector: 'app-home-testimonials',
   standalone: true,
-  imports: [],
+  imports: [TestimonialCardComponent],
   templateUrl: './home-testimonials.component.html',
   styleUrl: './home-testimonials.component.css',
 })
 export class HomeTestimonialsComponent implements AfterViewInit {
   realIndex = signal<number>(1);
   slidesLength = signal<number>(1);
+  dataSrv = inject(DataService);
+  testimonials = this.dataSrv.testimonials;
+
   ngAfterViewInit(): void {
     new Swiper('.testimonial-slider .swiper', {
       spaceBetween: 30,
