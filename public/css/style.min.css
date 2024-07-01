@@ -2510,14 +2510,7 @@ html.dark select:-webkit-autofill:focus {
   transition-duration: 350ms;
 }
 
-.ease-\[cubic-bezier\(0\2c
-  0\2c
-  0\.15\2c
-  1\)\2c
-  _cubic-bezier\(0\2c
-  0\2c
-  0\.15\2c
-  1\)\] {
+.ease-\[cubic-bezier\(0\2c 0\2c 0\.15\2c 1\)\2c _cubic-bezier\(0\2c 0\2c 0\.15\2c 1\)\] {
   transition-timing-function: cubic-bezier(0, 0, 0.15, 1),
     cubic-bezier(0, 0, 0.15, 1);
 }
@@ -2682,11 +2675,10 @@ html.dark select:-webkit-autofill:focus {
   transition: all 0.8s ease 0s;
 }
 
-@keyframes lineround {
-  transform {
-    height: translateY(200%);
+/* @keyframes lineround {
+  transform {    height: translateY(200%);
   }
-}
+} */
 
 .loader_line:after {
   animation: lineround 1.2s linear 2s infinite;
